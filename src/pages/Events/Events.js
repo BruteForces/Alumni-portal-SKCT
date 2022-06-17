@@ -8,7 +8,6 @@ const Events = () => {
 
   useEffect(() => {
     const scrollWidth = eventsRef.current.scrollWidth;
-
     const interval = setInterval(() => {
       if (eventsRef.current.scrollLeft !== scrollWidth) {
         eventsRef.current.scrollTo(eventsRef.current.scrollLeft + 1, 0);

@@ -27,8 +27,8 @@
 }
 .events {
   display: flex;
-  justify-content: space-between;
   margin: 1.8rem 0.7rem;
+  max-width: 100%;
   overflow-x: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;

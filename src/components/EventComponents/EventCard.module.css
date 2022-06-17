@@ -3,6 +3,7 @@
 .event_card {
   display: flex;
   flex-direction: column;
+  /* width: clamp(10em, 35vh, 15em); */
   min-width: 13em;
   min-height: 14em;
   background-color: #fff;

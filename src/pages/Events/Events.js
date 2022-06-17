@@ -14,37 +14,13 @@ const Events = () => {
             </p>
           </div>
           <div className={styles["events"]}>
-            <div className={styles["child"]}>
-              <EventCard isActive={true} />
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-            </div>
-            <div className={styles["child"]}>
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-            </div>
-
-            <div className={styles["child"]}>
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-            </div>
-            <div className={styles["child"]}>
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-            </div>
-            <div className={styles["child"]}>
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-            </div>
-            <div className={styles["child"]}>
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-              <EventCard isActive={isActive} />
-            </div>
+            {[...Array(10).keys()].map((event, idx) => (
+              <EventCard
+                id={event}
+                active={idx === 0}
+                scrollSnap={idx % 3 === 0}
+              />
+            ))}
           </div>
         </div>
       </div>

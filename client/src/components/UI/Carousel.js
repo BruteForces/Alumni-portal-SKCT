@@ -1,63 +1,58 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Carousel.module.css";
-
+import Testimonial from "components/HomeComponents/Testimonial";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-const Carousel = ({ children }) => {
+
+const Carousel = ({ data }) => {
+  const [scrollPause, setScrollPause] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [scrollPause, setScrollPause] = useState(true);
   let scrollInterval = null;
   const leftButtonHandler = () => {
-    if (activeIndex === 0) {
-      setActiveIndex(children.length - 1);
-    } else {
-      setActiveIndex(activeIndex - 1);
-    }
+
   };
 
   const rightButtonHandler = () => {
-    if (activeIndex === children.length - 1) {
-      setActiveIndex(0);
-    } else {
-      setActiveIndex(activeIndex + 1);
-    }
   };
 
-  const scrollMouseEnterHandler = () => {
-    setScrollPause(false);
-  };
-  const scrollMouseLeaveHandler = () => {
+  const mouseEnterHandler = () => {
     setScrollPause(true);
+  };
+  const mouseLeaveHandler = () => {
+    setScrollPause(false);
   };
 
   useEffect(() => {
-    if (scrollPause) {
+    if (!scrollPause) {
       scrollInterval = setTimeout(() => {
-        setActiveIndex((activeIndex + 1) % children.length);
-      }, 3000);
+        setActiveIndex((activeIndex + 1) % data.length);
+      }, 5000);
       return () => clearTimeout(scrollInterval);
     }
   });
 
   return (
     <div className={styles["carousel"]}>
-      <div className={styles["left"]} onClick={leftButtonHandler}>
-        <BsChevronLeft />
+      <div className={styles["inner"]}
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      >
+        {data.map((item, index) => {
+          return (
+            <div className={styles.carousel_item} style={{ width: '100%' }} onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}>
+              <Testimonial
+                key={index}
+                id={index}
+                quotes={item.quotes}
+                name={item.name}
+                imgSrc={item.imgSrc}
+              />
+            </div>
+          )
+        }
+        )}
       </div>
-      <div className={styles["center"]}>
-        <div
-          className={styles["inner"]}
-          onMouseEnter={scrollMouseEnterHandler}
-          onMouseLeave={scrollMouseLeaveHandler}
-        >
-          {React.Children.map(children, (child, index) => {
-            return activeIndex === index && child;
-          })}
-        </div>
-      </div>
-      <div className={styles["right"]} onClick={rightButtonHandler}>
-        <BsChevronRight />
-      </div>
-    </div>
+    </div >
+
   );
 };
 

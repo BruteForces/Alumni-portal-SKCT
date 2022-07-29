@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Testimonial from "components/HomeComponents/Testimonial";
 import Carousel from "components/UI/Carousel";
 import styles from "./Home.module.css";
+import NewTestimonialCard from "components/HomeComponents/NewTestimonialCard";
 
 const Home = () => {
+  const [newTestimonialActive, setNewTestimonialActive] = useState(false);
+  //testData:
+  const testData = [
+    {
+      quotes: "“Hi, This is Ben i am working at Jakash corporation”",
+      imgSrc: "https://via.placeholder.com/150",
+      name: "Mr.Jesso Clarence.M Engineering Manager, Akamai Technology, Bangalore Batch: 2006-2010"
+    },
+    {
+      quotes: "“Choosing Sri Krishna College of Technology to pursue B.Tech IT was one of the best decisions in my life.”",
+      imgSrc: "https://via.placeholder.com/200",
+      name: "Mr.Jesso Clarence.M Engineering Manager, Akamai Technology, Bangalore Batch: 2006-2010"
+    },
+    {
+      quotes: "I am a test quote3",
+      imgSrc: "https://via.placeholder.com/150",
+      name: "Mr.Jesso Clarence.M Engineering Manager, Akamai Technology, Bangalore Batch: 2006-2010"
+    },
+    {
+      quotes: "I am a test quote4",
+      imgSrc: "https://via.placeholder.com/150",
+      name: "Mr.Jesso Clarence.M Engineering Manager, Akamai Technology, Bangalore Batch: 2006-2010"
+    }
+
+  ]
+
   return (
     <div className={`${styles.Body} `}>
       <div className={styles["Content-Container"]}>
@@ -21,39 +48,13 @@ const Home = () => {
 
         <div id={styles["Testimonials"]}>
           <div className={`${styles.Container}`}>
-            <Carousel>
-              <Testimonial
-                index={0}
-                quotes="“Hi, This is Jesso Clarence i am working at Jakash corporation”"
-                name="Mr.Jesso Clarence.M Engineering Manager, Akamai Technology, Bangalore Batch: 2006-2010"
-              >
-                <img src={require("assets/carousel1.png")} alt="" />
-              </Testimonial>
+            <Carousel data={testData} />
+            <img src={require("assets/testimonial.png")} alt="testimonial-img" />
+            <button className={`${styles.new_testimonial_btn} ${newTestimonialActive && styles.active}`} onClick={() => setNewTestimonialActive(!newTestimonialActive)}>
+              New Testimonial <span>+</span>
+            </button>
 
-              <Testimonial
-                index={1}
-                quotes="“Hi, This is Christopher i am working at Jakash corporation”"
-                name="Mr.Jesso Clarence.M Engineering Manager, Akamai Technology, Bangalore Batch: 2006-2010"
-              >
-                <img src={require("assets/carousel2.png")} alt="" />
-              </Testimonial>
-
-              <Testimonial
-                index={2}
-                quotes="“Hi, This is Christopher i am working at Jakash corporation”"
-                name="Mr.Jesso Clarence.M Engineering Manager, Akamai Technology, Bangalore Batch: 2006-2010"
-              >
-                <img src={require("assets/carousel3.jpg")} alt="" />
-              </Testimonial>
-
-              <Testimonial
-                index={3}
-                quotes="“Hi, This is Christopher i am working at Jakash corporation”"
-                name="Mr.Jesso Clarence.M Engineering Manager, Akamai Technology, Bangalore Batch: 2006-2010"
-              >
-                <img src={require("assets/carousel4.jpg")} alt="" />
-              </Testimonial>
-            </Carousel>
+            <NewTestimonialCard active={newTestimonialActive} />
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Messages.module.css";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import ChatCard from "./ChatCard";
-import { AiOutlinePlus } from "react-icons/ai";
+import { RiSearch2Line } from "react-icons/ri";
 import { IoIosArrowBack, IoIosSend } from "react-icons/io";
 import ChatBubble from "./ChatBubble.js";
 import useGetConversationsForUser from "hooks/useGetConversationsForUser";
@@ -34,7 +34,7 @@ const ChatSelectPage = ({
       <div className={styles.messages_header}>
         Messages
         <div className={styles.messages_actions}>
-          <AiOutlinePlus className={styles.add_btn} fontSize={20} />
+          <RiSearch2Line className={styles.add_btn} fontSize={20} />
           <GrFormClose
             className={styles.arrow_btn}
             fontSize={20}

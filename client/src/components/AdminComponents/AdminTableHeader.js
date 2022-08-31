@@ -58,10 +58,7 @@ const AdminTableHeader = ({
           >
             Filter <FaFilter />
           </button>
-          <button>
-            Insert
-            <FaPlus />
-          </button>
+          
         </div>
       </div>
       <Divider mt={".6em"} mb={".6em"} bgColor={"#ADADAD"} />

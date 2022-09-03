@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Styles from "./AlumnusCard.module.css";
 
 const AlumnusCard = ({ alumnus }) => {
+  document.title="Alumni Portal | Alumni";
   const [isProfileModalOpen, setIsProfileModalOpen] = useState();
 
   const handleClose = () => {

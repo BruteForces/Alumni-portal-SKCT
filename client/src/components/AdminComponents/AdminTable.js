@@ -10,7 +10,7 @@ import useAxiosWithCallback from "hooks/useAxiosWithCallback";
 import { useAuthContext } from "context/auth/authContext";
 
 const AlumniTable = () => {
-  document.title="Alumni Portal | Alumni Details";al
+  document.title="Alumni Portal | Alumni Details";
   const { alumni: alumniData, error, isLoading, trigger } = useGetAlumni();
   const [alumni, setAlumni] = useState(alumniData);
   const [entriesPerPage, setEntriesPerPage] = useState(10);

@@ -4,6 +4,7 @@ import React from "react";
 import Styles from "./Admin.module.css";
 
 const EventRequest = () => {
+  document.title="Alumni Portal | Event Request";
   return (
     <div className={Styles.admin_container}>
       <AdminSidebar />

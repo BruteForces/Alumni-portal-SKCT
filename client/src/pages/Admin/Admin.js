@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "context/auth/authContext";
 
 const Admin = () => {
+  document.title="Alumni Portal | Admin";
   const { user } = useAuthContext();
 
   const navigate = useNavigate();

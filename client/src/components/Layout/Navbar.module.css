@@ -37,7 +37,7 @@
 }
 
 .navLink a {
-  font-size: 1.025em;
+  font-size: 0.8em;
   font-weight: 600;
   color: #4d4d4d;
   text-decoration: none;
@@ -62,7 +62,7 @@
 }
 .navbar-brand hr {
   width: 1.5px;
-  height: 1.5em;
+  height: 1.2em;
   background-color: rgb(41, 40, 40);
   margin: 0 0.5em;
 }
@@ -79,10 +79,10 @@
 }
 
 .navbar-brand .titleText h1 {
-  font-size: 0.8em;
+  font-size: 0.6em;
 }
 .navbar-brand .titleText h3 {
-  font-size: 0.4em;
+  font-size: 0.3em;
   font-weight: 600;
 }
 
@@ -134,18 +134,18 @@
 }
 @media (min-width: 1280px) {
   .navbar {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
   .navbar.scrolled {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 1280px) {
   .navbar {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .navbar.scrolled {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 @media (max-width: 1040px) {

@@ -21,6 +21,7 @@ for (let j = 0; j < 10; j++) {
   images.push(Src);
 }
 function OfficeBearers() {
+  document.title="Alumni Portal | Office bearer";
   const [activeIndex, setActiveIndex] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
 

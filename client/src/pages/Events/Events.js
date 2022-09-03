@@ -8,6 +8,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { useAuthContext } from "context/auth/authContext";
 
 const Events = () => {
+  document.title="Alumni Portal | Event";
   const [isCardActive, setIsCardActive] = useState(false);
   const { isLoading, events, error, setTrigger } = useGetEvents();
   const { user } = useAuthContext();

@@ -132,6 +132,7 @@ const LoginForm = () => {
 };
 
 const LoginPage = () => {
+  document.title="Alumni Portal | Login";
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );

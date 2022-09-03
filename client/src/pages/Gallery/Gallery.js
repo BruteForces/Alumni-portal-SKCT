@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Gallery.module.css";
 const Gallery = () => {
+  document.title="Alumni Portal | Gallery";
   const navigate = useNavigate();
 
   const [itemSwitch, setItemSwitch] = useState({

@@ -6,6 +6,7 @@ import { FiSearch } from "react-icons/fi";
 import Styles from "./AdminTableHeader.module.css";
 import Select from "react-select";
 import FilterModal from "./FilterModal";
+import { useAlertContext } from "context/alert/alertContext";
 
 const AdminTableHeader = ({
   onSelect,
@@ -17,7 +18,7 @@ const AdminTableHeader = ({
   const [selectedCount, setSelectedCount] = useState(10);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-
+  const { success } = useAlertContext();
   const onChangeHandler = ({ value }) => {
     setSelectedCount(value);
     onSelect(value);
@@ -61,7 +62,10 @@ const AdminTableHeader = ({
           </button>
           <button>
             Csv
-            <MdDownload fontSize={18}/>
+            <MdDownload fontSize={18}
+            onClick={() => {
+              success("Feature will be enabled soon");
+            }}/>
           </button>
         </div>
       </div>

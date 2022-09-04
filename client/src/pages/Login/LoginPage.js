@@ -97,9 +97,14 @@ const LoginForm = () => {
         <div className={` ${styles.loginButtonContainer}`}>
           <button>Login Now</button>
           <p>
-            <Link to="/forgot-password">
-              <a>Forgot Password</a>
-            </Link>
+              <a
+              onClick={() => {
+                success("Feature will be enabled soon,but your brain went slow so that's why you click Forgot Password :)");
+              }} >Forgot Password 
+              
+                       
+              </a>
+              
           </p>
         </div>
       </form>
